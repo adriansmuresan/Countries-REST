@@ -6,7 +6,7 @@
 // Modal
 
 const countriesEl = document.getElementById('countries');
-
+const toggleBtn = document.getElementById('toggle');
 getCountries();
 
 async function getCountries() {
@@ -41,3 +41,6 @@ function displayCountries(countries) {
   });
 };
 
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+});
