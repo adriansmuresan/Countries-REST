@@ -18,7 +18,7 @@ async function getCountries() {
 
 
 function displayCountries(countries) {
-  console.log(countries);
+  countriesEl.innerHTML = '';
 
   countries.forEach(country => {
 
@@ -27,13 +27,13 @@ function displayCountries(countries) {
 
     countryEl.innerHTML = `
     <div>
-      <img src="https://restcountries.eu/data/deu.svg" alt="">
+      <img src="${country.flag}" alt="${country.name}">
     </div
     <div class="card-body">
-      <h2>Germany</h2>
-      <p><strong>Population:</strong> 81,700,000</p>
-      <p><strong>Region:</strong> Europe</p>
-      <p><strong>Capital:</strong> Berlin</p>
+      <h2>${country.name}</h2>
+      <p><strong>Population:</strong> ${country.population}</p>
+      <p><strong>Region:</strong> ${country.region}</p>
+      <p><strong>Capital:</strong> ${country.capital}</p>
     </div>
     `;
 
