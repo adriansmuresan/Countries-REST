@@ -17,6 +17,7 @@ header {
   max-width: 1440px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 30px;
 }
@@ -90,4 +91,22 @@ body.dark .btn-toggle .far {
 
 .dropdown .fa-chevron-down {
   margin-left: 10px;
+}
+
+/* Country Card/section styling */
+.card {
+  width: 300px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-body h2 {
+  margin-top: 0;
 }
