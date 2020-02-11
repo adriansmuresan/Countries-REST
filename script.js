@@ -45,10 +45,12 @@ function displayCountries(countries) {
   });
 };
 
+// Toggle theme - dark or light
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
 });
 
+// Show and hide the filters(li tags)
 filterBtn.addEventListener('click', () => {
   filterBtn.classList.toggle('open');
 });
@@ -59,10 +61,27 @@ searchEl.addEventListener('input', e => {
 
   countryName.forEach(name => {
     if(name.innerText.toLowerCase().includes(value.toLowerCase())) {
+      // .crd -> .card-body -> .country-name
       name.parentElement.parentElement.style.display = 'block';
     } else {
       name.parentElement.parentElement.style.display = 'none';
     }
   });
 
-})
+});
+
+// Add a filter on the li's inside the .dropdown
+regionFilters.forEach(filter => {
+  filter.addEventListener('click', () => {
+    const countryRegion = document.querySelectorAll('.country-region');
+
+    countryRegion.forEach(region => {
+      if(region.innerText.toLowerCase().includes(filter.innerHTML.toLowerCase())) {
+        // .card -> .card-body -> .country-region
+        region.parentElement.parentElement.style.display = 'block';
+      } else {
+        region.parentElement.parentElement.style.display = 'none';
+      }
+    });
+  });
+});
