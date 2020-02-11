@@ -8,6 +8,7 @@
 const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
+const regionFilters = filterBtn.querySelectorAll('li');
 const searchEl = document.getElementById('search');
 
 getCountries();
@@ -35,7 +36,7 @@ function displayCountries(countries) {
     <div class="card-body">
       <h2 class="country-name">${country.name}</h2>
       <p><strong>Population:</strong> ${country.population}</p>
-      <p><strong>Region:</strong> ${country.region}</p>
+      <p class="country-region"><strong>Region:</strong> ${country.region}</p>
       <p><strong>Capital:</strong> ${country.capital}</p>
     </div>
     `;
