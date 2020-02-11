@@ -8,6 +8,7 @@
 const countriesEl = document.getElementById('countries');
 const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
+const searchEl = document.getElementById('search');
 
 getCountries();
 
@@ -50,3 +51,8 @@ toggleBtn.addEventListener('click', () => {
 filterBtn.addEventListener('click', () => {
   filterBtn.classList.toggle('open');
 });
+
+searchEl.addEventListener('input', e => {
+  const val = e.target.value;
+
+})
