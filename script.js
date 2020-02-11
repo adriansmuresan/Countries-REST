@@ -33,7 +33,7 @@ function displayCountries(countries) {
       <img src="${country.flag}" alt="${country.name}">
     </div>
     <div class="card-body">
-      <h2>${country.name}</h2>
+      <h2 class="country-name">${country.name}</h2>
       <p><strong>Population:</strong> ${country.population}</p>
       <p><strong>Region:</strong> ${country.region}</p>
       <p><strong>Capital:</strong> ${country.capital}</p>
@@ -53,6 +53,15 @@ filterBtn.addEventListener('click', () => {
 });
 
 searchEl.addEventListener('input', e => {
-  const val = e.target.value;
+  const { value } = e.target;
+  const countryName = document.querySelectorAll('.country-name');
+
+  countryName.forEach(name => {
+    if(name.innerText.toLowerCase().includes(value.toLowerCase())) {
+      name.parentElement.parentElement.style.display = 'block';
+    } else {
+      name.parentElement.parentElement.style.display = 'none';
+    }
+  });
 
 })
