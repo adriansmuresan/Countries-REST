@@ -73,10 +73,11 @@ searchEl.addEventListener('input', e => {
 // Add a filter on the li's inside the .dropdown
 regionFilters.forEach(filter => {
   filter.addEventListener('click', () => {
+    const value = filter.innerText;
     const countryRegion = document.querySelectorAll('.country-region');
 
     countryRegion.forEach(region => {
-      if(region.innerText.toLowerCase().includes(filter.innerHTML.toLowerCase())) {
+      if(region.innerText.includes( value ) || value === 'All') {
         // .card -> .card-body -> .country-region
         region.parentElement.parentElement.style.display = 'block';
       } else {
