@@ -59,10 +59,15 @@ function showCountryDetails(country) {
   modaImg.src = country.flag;
 
   modalBody.innerHTML = `
-      <h2 class="country-name">${country.name}</h2>
+      <h2>${country.name}</h2>
+      <p><strong>Native Name:</strong> ${country.nativeName}</p>
       <p><strong>Population:</strong> ${country.population}</p>
-      <p class="country-region"><strong>Region:</strong> ${country.region}</p>
+      <p><strong>Region:</strong> ${country.region}</p>
+      <p><strong>Sub Region:</strong> ${country.subregion}</p>
       <p><strong>Capital:</strong> ${country.capital}</p>
+      <p><strong>Top Level Domain:</strong> ${country.topLevelDomain[0]}</p>
+      <p><strong>Courencies:</strong> ${country.currencies.map(currency => currency.code)}</p>
+      <p><strong>Languages:</strong> ${country.languages.map(language => language.name)}</p>
   `;
 }
  
