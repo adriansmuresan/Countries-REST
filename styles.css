@@ -146,9 +146,9 @@ body.dark .btn-toggle .far {
 
 /* Modal styling */
 
-.modal-container {
+.modal {
   background-color: var(--background-el);
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   position: fixed;
@@ -157,10 +157,9 @@ body.dark .btn-toggle .far {
   right: 0;
   bottom: 0;
   z-index: 100;
-
 }
 
-.modal-container img {
+.modal img {
   max-width: 300px;
 }
 

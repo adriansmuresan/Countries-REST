@@ -10,6 +10,7 @@ const toggleBtn = document.getElementById('toggle');
 const filterBtn = document.getElementById('filter');
 const regionFilters = filterBtn.querySelectorAll('li');
 const searchEl = document.getElementById('search');
+const modal = document.getElementById('modal');
 
 getCountries();
 
@@ -40,6 +41,10 @@ function displayCountries(countries) {
       <p><strong>Capital:</strong> ${country.capital}</p>
     </div>
     `;
+
+    countryEl.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
 
     countriesEl.appendChild(countryEl);
   });
