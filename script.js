@@ -11,6 +11,7 @@ const filterBtn = document.getElementById('filter');
 const regionFilters = filterBtn.querySelectorAll('li');
 const searchEl = document.getElementById('search');
 const modal = document.getElementById('modal');
+const closeBtn = document.getElementById('close');
 
 getCountries();
 
@@ -58,6 +59,11 @@ toggleBtn.addEventListener('click', () => {
 // Show and hide the filters(li tags)
 filterBtn.addEventListener('click', () => {
   filterBtn.classList.toggle('open');
+});
+
+// Close the modal
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
 });
 
 searchEl.addEventListener('input', e => {
