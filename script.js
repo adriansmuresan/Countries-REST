@@ -45,12 +45,27 @@ function displayCountries(countries) {
 
     countryEl.addEventListener('click', () => {
       modal.style.display = 'flex';
+      showCountryDetails(country);
     });
 
     countriesEl.appendChild(countryEl);
   });
 };
 
+function showCountryDetails(country) {
+  const modalBody = modal.querySelector('.modal-body');
+  const modaImg = modal.querySelector('img');
+
+  modaImg.src = country.flag;
+
+  modalBody.innerHTML = `
+      <h2 class="country-name">${country.name}</h2>
+      <p><strong>Population:</strong> ${country.population}</p>
+      <p class="country-region"><strong>Region:</strong> ${country.region}</p>
+      <p><strong>Capital:</strong> ${country.capital}</p>
+  `;
+}
+ 
 // Toggle theme - dark or light
 toggleBtn.addEventListener('click', () => {
   document.body.classList.toggle('dark');
